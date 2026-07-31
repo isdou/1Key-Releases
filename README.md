@@ -1,8 +1,12 @@
-# 1Key
+<p align="center">
+  <img src="assets/app-icon.png" width="128" alt="1Key App 图标">
+</p>
 
-一站查看 AI 编程订阅额度、API 余额和本机使用成本的原生 macOS 工具。
+<h1 align="center">1Key</h1>
 
-[下载最新版本](https://github.com/isdou/1Key-Releases/releases/latest)
+<p align="center">一站查看 AI 编程订阅额度、API 余额和本机使用成本的原生 macOS 工具。</p>
+
+<p align="center"><a href="https://github.com/isdou/1Key-Releases/releases/latest">下载最新版本</a></p>
 
 ![1Key 凭证概览](assets/screenshots/01-overview.png)
 
@@ -14,6 +18,14 @@
 - 统计本机 AI 使用记录并估算 Token 与成本；估算数据不等同于供应商账单。
 - 首次启动扫描一次本机登录配置，后续不会在启动时重复扫描；刷新只更新已添加账号。
 - API Key 与凭证保存在本机钥匙串，导出的元数据不包含敏感凭证。
+
+## 菜单栏快速查看
+
+把常用账号固定在 macOS 菜单栏，无需打开主窗口即可查看剩余额度、重置时间和本机用量；下拉面板显示哪些账号也可以由用户自行设置。
+
+<p align="center">
+  <img src="assets/screenshots/06-menu-bar.png" width="460" alt="1Key 菜单栏额度面板">
+</p>
 
 | 订阅额度 | API 余额 |
 | --- | --- |
