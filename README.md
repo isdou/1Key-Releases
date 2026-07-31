@@ -45,10 +45,6 @@
 
 请通过 [GitHub Issues](https://github.com/isdou/1Key-Releases/issues) 报告问题或提出功能建议。提交截图前请确认其中没有完整 API Key、Token 或其他敏感信息。
 
-## 作者
-
-[@isdou](https://github.com/isdou)
-
 ## 授权
 
 1Key 是专有软件，公开仓库仅用于发布已编译安装包和用户文档，不提供源代码。详见 [LICENSE](LICENSE)。
