@@ -8,6 +8,12 @@
 
 <p align="center"><a href="https://github.com/isdou/1Key-Releases/releases/latest">下载最新版本</a></p>
 
+<p align="center">
+  <a href="https://github.com/isdou/1Key-Releases/releases/latest"><img src="https://img.shields.io/github/v/release/isdou/1Key-Releases?label=release&style=flat-square" alt="最新版本"></a>
+  <a href="https://github.com/isdou/1Key-Releases/releases"><img src="https://img.shields.io/github/downloads/isdou/1Key-Releases/total?label=downloads&style=flat-square" alt="总下载量"></a>
+  <img src="https://img.shields.io/badge/macOS-14%2B-000000?style=flat-square&logo=apple&logoColor=white" alt="macOS 14+">
+</p>
+
 ![1Key 凭证概览](assets/screenshots/01-overview.png)
 
 ## 主要功能
