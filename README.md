@@ -56,20 +56,17 @@
 
 Grok Bot 当前复用本机 Cursor 登录状态，两者应使用同一账号。Antigravity 读取其已保存的本机登录凭据；登录过期时需要重新登录。
 
-## 安装与开始使用
+## 安装
 
-1. 下载 [最新 Release](https://github.com/isdou/1Key-Releases/releases/latest) 中的 `1Key-*.dmg`。
-2. 打开 DMG，将 **1Key** 拖入 **Applications / 应用程序**。
-3. 启动后按提示授权需要读取的 AI 工具配置目录，并扫描本机账号；也可手动添加 API 凭证。
-4. 在 **设置 → 显示** 选择菜单栏常驻账号、下拉列表账号和各卡片展示的额度。
+1. [下载安装包](https://github.com/isdou/1Key-Releases/releases/latest)。
+2. 打开安装包，将 **1Key** 拖入 **应用程序**。
+3. 打开 1Key，按提示授权文件夹访问，即可扫描并连接本机已有的 AI 账号。
 
-系统要求 **macOS 14 Sonoma 或更高版本**；安装包同时支持 Apple 芯片和 Intel Mac。正式 DMG 使用 Apple Developer ID 签名并经过 Apple 公证。更新时先退出旧版，再替换应用；保留原有账号与设置。
+想调整菜单栏显示哪些账号和额度，可以前往 **设置 → 显示**。
 
-每个 Release 提供 `SHA256SUMS.txt`。将它与 DMG 放在同一文件夹，可以校验下载文件：
+支持 **macOS 14 及以上版本**，兼容 Apple 芯片和 Intel Mac。安装包已通过 Apple 签名与公证。
 
-```sh
-shasum -a 256 -c SHA256SUMS.txt
-```
+**更新：** 退出旧版后替换应用即可，账号与设置会保留。
 
 ## 刷新与隐私
 
