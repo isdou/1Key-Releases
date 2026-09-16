@@ -1,68 +1,89 @@
 <p align="center">
-  <img src="assets/app-icon.png" width="128" alt="1Key App 图标">
+  <img src="assets/app-icon.png" width="112" alt="1Key 黑银色 1K 图标">
 </p>
-
 <h1 align="center">1Key</h1>
-
-<p align="center">一站查看 AI 编程订阅额度、API 余额和本机使用成本的原生 macOS 工具。</p>
-
-<p align="center"><a href="https://github.com/isdou/1Key-Releases/releases/latest">下载最新版本</a></p>
-
+<p align="center"><strong>AI 额度、Token 与成本，一眼看清。</strong></p>
+<p align="center">原生 macOS 工具，让常用 AI 服务的剩余额度和重置时间常驻菜单栏。</p>
 <p align="center">
-  <a href="https://github.com/isdou/1Key-Releases/releases/latest"><img src="https://img.shields.io/github/v/release/isdou/1Key-Releases?label=release&style=flat-square" alt="最新版本"></a>
-  <a href="https://github.com/isdou/1Key-Releases/releases"><img src="https://img.shields.io/github/downloads/isdou/1Key-Releases/total?label=downloads&style=flat-square" alt="总下载量"></a>
-  <img src="https://img.shields.io/badge/macOS-14%2B-000000?style=flat-square&logo=apple&logoColor=white" alt="macOS 14+">
+  <a href="https://github.com/isdou/1Key-Releases/releases/latest">下载最新版本</a> ·
+  <a href="https://github.com/isdou/1Key-Releases/releases">更新记录</a> ·
+  <a href="https://github.com/isdou/1Key-Releases/issues">反馈问题</a>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/isdou/1Key-Releases?label=release&style=flat-square&color=222222" alt="最新版本">
+  <img src="https://img.shields.io/badge/macOS-14%2B-222222?style=flat-square&logo=apple&logoColor=white" alt="macOS 14+">
+  <img src="https://img.shields.io/badge/Apple%20Silicon%20%2B%20Intel-Universal-222222?style=flat-square" alt="通用版本">
 </p>
 
-![1Key 凭证概览](assets/screenshots/01-overview.png)
+## 随手看额度，不必来回打开控制台
 
-## 主要功能
+1Key 把分散的 AI 编程订阅集中到一处。打开菜单栏下拉，即可查看剩余额度、具体重置日期，以及本机记录中的 Token 用量和估算费用。
 
-- 集中查看 Kimi Code CLI、Antigravity、Grok Code、OpenAI Codex、Cursor、Trae 等订阅状态与额度窗口。
-- 查看 DeepSeek 等 API 服务的账户余额、连接状态和响应时间。
-- 在 macOS 菜单栏常驻显示用户自己选择的账号和剩余额度。
-- 统计本机 AI 使用记录并估算 Token 与成本；估算数据不等同于供应商账单。
-- 首次启动扫描一次本机登录配置，后续不会在启动时重复扫描；刷新只更新已添加账号。
-- API Key 与凭证保存在本机钥匙串，导出的元数据不包含敏感凭证。
+- **显示你关心的额度。** 账号和额度窗口分别选择，例如 Codex 只显示 Weekly，隐藏不常看的 Spark 窗口。
+- **不同服务独立展示。** Grok Bot 与 Grok Code 分开显示；Antigravity 使用自己的登录状态查询云端额度，无需一直开着客户端。
+- **一致的黑白界面。** 支持浅色、深色及跟随系统，菜单栏与详情页使用圆点额度条。
+- **无箭头玻璃面板。** macOS 26 使用原生 Liquid Glass；较早系统使用磨砂材质，并兼容系统“降低透明度”设置。
 
-## 菜单栏快速查看
+## 用了多少，也知道大概值多少
 
-把常用账号固定在 macOS 菜单栏，无需打开主窗口即可查看剩余额度、重置时间和本机用量；下拉面板显示哪些账号也可以由用户自行设置。
+「用量与成本」把 Token 总量、估算费用和工具明细放在一张卡片里。
 
-<p align="center">
-  <img src="assets/screenshots/06-menu-bar.png" width="460" alt="1Key 菜单栏额度面板">
-</p>
-
-| 订阅额度 | API 余额 |
+| 你想知道的 | 1Key 的展示方式 |
 | --- | --- |
-| ![订阅额度详情](assets/screenshots/02-quota-detail.png) | ![API 余额](assets/screenshots/03-api-balance.png) |
+| 今天或最近用了多少 | 今天、7 天、30 天统一切换 |
+| 哪几天用得最多 | 按天排列的点阵柱状图，悬停查看具体数值 |
+| 用在哪个工具上 | 每个工具一行，显示 Token、占比和估算费用 |
+| 没读到数据怎么办 | 显示空状态和数据来源检查入口，不把缺失记录当作零用量 |
+| 新模型没有价格怎么办 | Token 继续统计，费用显示“暂无估价”或标记“部分” |
 
-| 自定义菜单栏展示 | 添加账号 |
+### 费用如何计算？
+
+按模型的输入、缓存读取、缓存写入和输出 Token 单价估算。价格表内置离线副本，并在扫描用量时**最多每小时检查一次更新**；网络不可用时继续使用已有价格。
+
+可更新价格数据来自 [OpenUsage 的公开模型价格补充表](https://github.com/robinebers/openusage/blob/main/Sources/OpenUsage/Resources/pricing_supplement.json)，其匹配项优先于 1Key 内置价格。当前已涵盖 GPT-6 Astra、Grok 4.6 等模型。
+
+**估算金额是 API 等价价格，不是你的订阅账单，也不表示额外扣费。** 当前不从会话元数据自动识别快速模式或长上下文附加费。未知模型不会被默认当作免费。
+
+## 服务与数据来源
+
+| 功能 | 服务 / 来源 |
 | --- | --- |
-| ![显示设置](assets/screenshots/04-settings.png) | ![添加账号](assets/screenshots/05-add-account.png) |
+| 订阅额度 | OpenAI Codex、Antigravity、Grok Code、Grok Bot、Cursor、GitHub Copilot、Kimi Code、Trae 等；可用字段取决于服务接口与登录状态 |
+| API 余额与连接 | DeepSeek 等 API 服务；不同供应商支持的查询能力不同 |
+| 本机 Token 与成本 | 当前读取 Codex、Claude Code、Grok Code、Kimi Code、小米 MiMo 的受支持日志或本机记录 |
 
-## 系统要求
+**额度与 Token 统计是两条独立的数据来源。** 能读取一个服务的剩余额度，不意味着一定能获取它的本机 Token 明细。Antigravity、Cursor、Trae 和 Grok Bot 当前未接入这张本机 Token 汇总表。
 
-- macOS 14 Sonoma 或更高版本
-- 支持 Apple Silicon 与 Intel Mac
-- 部分订阅额度依赖对应 AI 工具已经在本机登录
+Grok Bot 当前复用本机 Cursor 登录状态，两者应使用同一账号。Antigravity 读取其已保存的本机登录凭据；登录过期时需要重新登录。
 
-## 安装
+## 安装与开始使用
 
-1. 从 [Releases](https://github.com/isdou/1Key-Releases/releases/latest) 下载最新的 `1Key-*.dmg`。
-2. 打开 DMG，将 1Key 拖入“应用程序”。
-3. 首次启动时按提示完成一次本机账号扫描。
+1. 下载 [最新 Release](https://github.com/isdou/1Key-Releases/releases/latest) 中的 `1Key-*.dmg`。
+2. 打开 DMG，将 **1Key** 拖入 **Applications / 应用程序**。
+3. 启动后按提示授权需要读取的 AI 工具配置目录，并扫描本机账号；也可手动添加 API 凭证。
+4. 在 **设置 → 显示** 选择菜单栏常驻账号、下拉列表账号和各卡片展示的额度。
 
-公开安装包使用 Apple Developer ID 签名并经过 Apple 公证。
+系统要求 **macOS 14 Sonoma 或更高版本**；安装包同时支持 Apple 芯片和 Intel Mac。正式 DMG 使用 Apple Developer ID 签名并经过 Apple 公证。更新时先退出旧版，再替换应用；保留原有账号与设置。
 
-## 隐私
+每个 Release 提供 `SHA256SUMS.txt`。将它与 DMG 放在同一文件夹，可以校验下载文件：
 
-1Key 的账号元数据、API Key 和本机使用记录保存在你的 Mac 上。详情见 [隐私说明](PRIVACY.md)。
+```sh
+shasum -a 256 -c SHA256SUMS.txt
+```
+
+## 刷新与隐私
+
+- 启动会扫描已授权目录；后台定时刷新更新已添加账号。
+- 刷新间隔可在设置中调整。启动、重新扫描和手动操作也可能额外触发刷新，因此并非严格每隔指定分钟才更新一次。
+- 账号与用量数据保存在本机，敏感凭证通过 macOS 钥匙串保存；元数据导出不包含 API Key 或 Token。
+- 额度请求发送给对应服务；价格更新只下载公共价格文件，不上传账号、对话或 Token 使用记录。
+
+详见 [隐私说明](PRIVACY.md)。
 
 ## 反馈
 
-请通过 [GitHub Issues](https://github.com/isdou/1Key-Releases/issues) 报告问题或提出功能建议。提交截图前请确认其中没有完整 API Key、Token 或其他敏感信息。
+欢迎通过 [Issues](https://github.com/isdou/1Key-Releases/issues) 提交建议或问题。请附上 1Key 版本、macOS 版本、服务名称和复现步骤；分享截图前遮住敏感信息，请勿提交完整 Token、API Key 或原始对话日志。
 
-## 授权
+## 关于本仓库
 
-1Key 是专有软件，公开仓库仅用于发布已编译安装包和用户文档，不提供源代码。详见 [LICENSE](LICENSE)。
+本仓库用于发布 **1Key 安装包、更新说明和用户文档**。1Key 为专有软件，源代码不在本仓库公开，详见 [LICENSE](LICENSE)。
