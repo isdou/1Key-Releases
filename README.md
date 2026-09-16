@@ -15,6 +15,14 @@
   <img src="https://img.shields.io/badge/Apple%20Silicon%20%2B%20Intel-Universal-222222?style=flat-square" alt="通用版本">
 </p>
 
+## 菜单栏预览
+
+<p align="center">
+  <img src="assets/screenshots/07-menu-bar-grok-antigravity.jpg" width="240" alt="1Key 菜单栏中的 Grok Bot 与 Antigravity 额度">
+  <img src="assets/screenshots/08-menu-bar-codex-grok.jpg" width="240" alt="1Key 菜单栏中的 OpenAI Codex 与 Grok Code 额度">
+  <img src="assets/screenshots/09-menu-bar-grok-antigravity.jpg" width="240" alt="1Key 菜单栏中的 Grok Code、Grok Bot 与 Antigravity 额度">
+</p>
+
 ## 随手看额度，不必来回打开控制台
 
 1Key 把分散的 AI 编程订阅集中到一处。打开菜单栏下拉，即可查看剩余额度、具体重置日期，以及本机记录中的 Token 用量和估算费用。
